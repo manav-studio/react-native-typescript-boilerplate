@@ -1,9 +1,9 @@
+import { getUser } from '@api/fakeApiUser';
 import {
   createSlice,
   createAsyncThunk,
   createEntityAdapter,
 } from '@reduxjs/toolkit';
-import { getUser } from '../api/fakeApiUser';
 
 export const fetchUser = createAsyncThunk('user/getUser', async () => {
   const response = await getUser();
