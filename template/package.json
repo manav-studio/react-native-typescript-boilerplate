@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "link:font": "npx react-native-asset",
     "update:pods": "npx pod-install ios",
     "postinstall": "yarn run update:pods && npx typesync",
     "build:ios": "detox build --configuration ios.sim.debug",
