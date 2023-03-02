@@ -1,38 +1,19 @@
+import VectorIcon from '@components/VectorIcons';
 import React from 'react';
 import {
   SafeAreaView,
-  View,
-  Text,
   StatusBar,
+  Text,
   TouchableOpacity,
-  StyleSheet,
+  View,
 } from 'react-native';
-import styles from './Home.style';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { fetchUser, selectAll } from '../../stores/user.reducer';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import VectorIcon from '@components/VectorIcons';
+import { useAppDispatch } from '../../hooks/redux';
+import { fetchUser } from '../../stores/user.reducer';
+import styles from './Home.style';
 
 const Home = ({ navigation }: any) => {
   const dispatch = useAppDispatch();
-  const users = useAppSelector(selectAll);
-
-  function ListUser() {
-    return (
-      <>
-        {users.map((data: any) => {
-          return (
-            <View key={data?.id} style={styleUser as any}>
-              <Text style={{ fontSize: 15 }}>
-                {data?.id}. {data?.name}
-              </Text>
-            </View>
-          );
-        })}
-      </>
-    );
-  }
-
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor={'#f9f9f9'} />
@@ -49,19 +30,11 @@ const Home = ({ navigation }: any) => {
               <VectorIcon.AntDesign name="rightcircle" size={44} />
               <Text style={styles.text}>Click here to show User data:</Text>
             </TouchableOpacity>
-            <ListUser />
           </View>
         </View>
       </SafeAreaView>
     </>
   );
 };
-
-const styleUser = StyleSheet.create<any>({
-  borderBottomWidth: 1,
-  borderColor: '#eee',
-  padding: 1,
-  marginTop: 10,
-});
 
 export default Home;
