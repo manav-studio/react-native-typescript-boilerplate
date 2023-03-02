@@ -17,7 +17,7 @@
     "release": "standard-version"
   },
   "description": "React Native TypeScript Boilerplate Template",
-  "repository": "https://github.com/manav-studio/react-native-typescript-boilerplate/tree/customized",
+  "repository": "https://github.com/handi-dev/react-native-typescript-boilerplate",
   "author": "Handi Priyono <contact@handi.dev>",
   "license": "MIT",
   "dependencies": {},
