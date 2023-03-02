@@ -11,6 +11,7 @@ import styles from './Home.style';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { fetchUser, selectAll } from '../../stores/user.reducer';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import VectorIcon from '@components/VectorIcons';
 
 const Home = ({ navigation }: any) => {
   const dispatch = useAppDispatch();
@@ -45,6 +46,7 @@ const Home = ({ navigation }: any) => {
             <TouchableOpacity
               style={styles.buttonStyle}
               onPress={() => dispatch(fetchUser())}>
+              <VectorIcon.AntDesign name="rightcircle" size={44} />
               <Text style={styles.text}>Click here to show User data:</Text>
             </TouchableOpacity>
             <ListUser />
